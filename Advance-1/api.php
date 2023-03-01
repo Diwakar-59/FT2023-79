@@ -1,13 +1,13 @@
 <?php 
-require '../vendor/autoload.php';
 
+require '../vendor/autoload.php';
 use GuzzleHttp\Client;
 
 /**
  * Class for extracting data from the API.
  */
-class API
-{
+class ApiData {
+
   // Array to store the body links of each section.
   public $link_arr = array();
 
@@ -41,11 +41,9 @@ class API
    * @return Array.
    */
   function get_services_link($data) {
-    $i = 0;
     foreach($data->data as $apidata) {
       if (!($apidata->attributes->field_services) == null) {
-        $link_arr[$i] = $apidata->attributes->field_services->value;
-        $i++;
+        $link_arr[] = $apidata->attributes->field_services->value;
       }
     }
     return $link_arr;
@@ -57,16 +55,14 @@ class API
    * @return Array.
    */
   function get_services_headings($data) {
-    $j = 0;
     foreach($data->data as $apidata) {
       if (!($apidata->attributes->field_services) == null) {
         if (($apidata->attributes->field_secondary_title) == null) {
-          $heading_arr[$j] = $apidata->attributes->title;
+          $heading_arr[] = $apidata->attributes->title;
         }
         else {
-          $heading_arr[$j] = $apidata->attributes->field_secondary_title->value;
+          $heading_arr[] = $apidata->attributes->field_secondary_title->value;
         }
-        $j++;
       }
     }
     return $heading_arr;
@@ -80,15 +76,13 @@ class API
    * @return Array.
    */
   function get_services_images($data) {
-    $k = 0;
     foreach($data->data as $apidata) {
       if (!($apidata->attributes->field_services) == null) {
         $self_link = $apidata->relationships->field_image->links->self->href;
         $self_body = $this->get_json($self_link);
         $relative_link = $self_body->links->related->href;
         $relative_body = $this->get_json($relative_link);
-        $img_arr[$k] = $relative_body->data->attributes->uri->url;
-        $k++;
+        $img_arr[] = $relative_body->data->attributes->uri->url;
       }
     }
     return $img_arr;
@@ -101,14 +95,15 @@ class API
    * @return Array.
    */
   function get_button_links($data) {
-    $y = 0;
     foreach($data->data as $apidata) {
       if (!($apidata->attributes->field_services) == null) {
         $alias = $apidata->attributes->path->alias;
-        $redirect_link[$y] = $alias;
-        $y++;
+        $redirect_link[] = $alias;
       }
     }
     return $redirect_link;
   }
+
 }
+
+?>

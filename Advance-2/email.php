@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +28,3 @@
   </div>
 </body>
 </html>
-
-<!--
-          <form class="form" action="upload.php" method="post" enctype="multipart/form-data">
-          <span class="form-data-head">First Name: </span>
-          <input id="fname" class="box" type="text" name="fname" value="<?php echo $fname; ?>" required onblur="validateFirstName()" onkeyup="getFullName()">
-          <span id="checkfname" class="error"></span>
-          <br><br>
--->

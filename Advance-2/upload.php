@@ -1,11 +1,11 @@
 <?php 
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
 require '../php_validate.php';
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $_POST['email'];
@@ -40,9 +40,9 @@ try {
 
   $mail->send();
   echo "Email message sent.";
-} catch (Exception $e) {
+} 
+catch (Exception $e) {
   echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
 }
 
 ?>
-

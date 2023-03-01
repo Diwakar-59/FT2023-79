@@ -12,17 +12,17 @@
 </head>
 
 <?php
+
 require '../vendor/autoload.php';
 include 'api.php';
 
 use GuzzleHttp\Client;
 
 $var = 'https://ir-dev-d9.innoraft-sites.com';
-$json = new API();
+$json = new ApiData();
 
 // Base API link.
 $base = 'https://ir-dev-d9.innoraft-sites.com/jsonapi/node/services';
-
 // $arr_body -> Stores the entire data of the API in json format. 
 $arr_body = $json->get_json($base);
 
@@ -82,6 +82,7 @@ for ($m = 0; $m < count($link_arr); $m++) {
         </div>";
   }
 }
+
 ?>
 <body>
 </body>
