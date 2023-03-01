@@ -42,7 +42,7 @@ class ApiData {
    */
   function get_services_link($data) {
     foreach($data->data as $apidata) {
-      if (!($apidata->attributes->field_services) == null) {
+      if (!($apidata->attributes->field_services) == NULL) {
         $link_arr[] = $apidata->attributes->field_services->value;
       }
     }
@@ -56,8 +56,8 @@ class ApiData {
    */
   function get_services_headings($data) {
     foreach($data->data as $apidata) {
-      if (!($apidata->attributes->field_services) == null) {
-        if (($apidata->attributes->field_secondary_title) == null) {
+      if (!($apidata->attributes->field_services) == NULL) {
+        if (($apidata->attributes->field_secondary_title) == NULL) {
           $heading_arr[] = $apidata->attributes->title;
         }
         else {
@@ -77,7 +77,7 @@ class ApiData {
    */
   function get_services_images($data) {
     foreach($data->data as $apidata) {
-      if (!($apidata->attributes->field_services) == null) {
+      if (!($apidata->attributes->field_services) == NULL) {
         $self_link = $apidata->relationships->field_image->links->self->href;
         $self_body = $this->get_json($self_link);
         $relative_link = $self_body->links->related->href;
@@ -96,7 +96,7 @@ class ApiData {
    */
   function get_button_links($data) {
     foreach($data->data as $apidata) {
-      if (!($apidata->attributes->field_services) == null) {
+      if (!($apidata->attributes->field_services) == NULL) {
         $alias = $apidata->attributes->path->alias;
         $redirect_link[] = $alias;
       }

@@ -14,26 +14,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email_error = $php_check->email_error;
 }
 
-$mail =  new PHPMailer(true);
+$mail =  new PHPMailer(TRUE);
 try {
-  // Server settings
-  //$mail->SMTPDebug = 2; //SMTP::DEBUG_SERVER; // for detailed debug output
+  // Server settings.
+  //$mail->SMTPDebug = 2; //SMTP::DEBUG_SERVER; // for detailed debug output.
   $mail->isSMTP();
   $mail->Host = 'smtp.gmail.com';
-  $mail->SMTPAuth = true;
+  $mail->SMTPAuth = TRUE;
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = 587;
 
-  $mail->Username = 'diwakar.tekie@gmail.com'; // YOUR gmail email
-  $mail->Password = 'xcwgtdqasvauymsr'; // YOUR gmail password
+  // YOUR gmail email.
+  $mail->Username = 'diwakar.tekie@gmail.com'; 
+  // YOUR gmail password.
+  $mail->Password = 'xcwgtdqasvauymsr'; 
 
-  // Sender and recipient settings
+  // Sender and recipient settings.
   $mail->setFrom('diwakar.tekie@gmail.com', 'Diwakar Sah');
   $mail->addAddress($email, $email);
-  $mail->addReplyTo('diwakar.tekie@gmail.com', 'Diwakar Sah'); // to set the reply to
+  $mail->addReplyTo('diwakar.tekie@gmail.com', 'Diwakar Sah'); 
 
-  // Setting the email content
-  $mail->IsHTML(true);
+  // Setting the email content.
+  $mail->IsHTML(TRUE);
   $mail->Subject = "Sent email using Gmail SMTP and PHPMailer";
   $mail->Body = '<b>Thank you for your submission.</b> ';
   $mail->AltBody = 'Plain text message body for non-HTML email client. Gmail SMTP email body.';

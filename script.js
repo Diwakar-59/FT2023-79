@@ -9,10 +9,11 @@ function validateEmail() {
   if (!mail.match(regex)) {
     document.getElementById("checkemail").innerHTML =
       "*Enter a valid email address!!";
-    document.getElementById("submit").disabled = true;
-  } else {
+    document.getElementById("submit").disabled = TRUE;
+  } 
+  else {
     document.getElementById("checkemail").innerHTML =
       '<span style="color:green">This email address is valid !!</span>';
-    document.getElementById("submit").disabled = false;
+    document.getElementById("submit").disabled = FALSE;
   }
 }

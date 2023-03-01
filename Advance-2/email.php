@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,19 +11,20 @@
   </style>
   <script src="../script.js"></script>
 </head>
+
 <body>
   <div class="centre profile">
     <div class="design container form-border">
       <div class="form-all">
-      <h3>PHP Advance Assignment 2</h3>
-      <form class="form" action="upload.php" method="post">
-      <span class="form-data-head">Email ID:</span>
+        <h3>PHP Advance Assignment 2</h3>
+        <form class="form" action="upload.php" method="post">
+          <span class="form-data-head">Email ID:</span>
           <input id="email" class="box" type="text" name="email" value="" required onblur="validateEmail()">
           <span id="checkemail" class="error"></span>
-        <div class="form-inner ">
-          <input id="submit" class="submit" type="submit">
-        </div>
-      </form>
+          <div class="form-inner ">
+            <input id="submit" class="submit" type="submit">
+          </div>
+        </form>
       </div>
     </div>
   </div>
