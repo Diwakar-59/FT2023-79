@@ -1,8 +1,8 @@
-  /**
-   * This function is responsible for validating the email entered by the user.
-   * regex - This is the variable for storing the valid pattern.
-   * mail - This is the variable for storing the email entered by the user.
-   */
+/**
+ * This function is responsible for validating the email entered by the user.
+ * regex - This is the variable for storing the valid pattern.
+ * mail - This is the variable for storing the email entered by the user.
+ */
 function validateEmail() {
   var mail = document.getElementById("email").value;
   var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

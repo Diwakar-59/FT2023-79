@@ -8,16 +8,24 @@ use GuzzleHttp\Client;
  */
 class ApiData {
 
-  // Array to store the body links of each section.
+  /**
+   * Array to store the body links of each section.
+   */
   public $link_arr = array();
 
-  // Array to store the heading of each section.
+  /**
+   * Array to store the heading of each section.
+   */
   public $heading_arr = array();
 
-  // Array to store the image of each section.
+  /**
+   * Array to store the image of each section.
+   */
   public $img_arr =  array();
 
-  // Array to store the redirect links.
+  /**
+   * Array to store the redirect links.
+   */
   public $redirect_link = array();
 
   /**
